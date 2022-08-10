@@ -1,23 +1,19 @@
 <template>
-<Nav/>
-<router-view/>
-<Footer/>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-6">
+        <p>hdhdhfh</p>
+    </div>
+    <div class="col-6">
+        <p>hggcgyyg</p>
+    </div>
+    </div>
+</div>
 </template>
-
-<script>
-import Nav from "@/components/navbar.vue"
-import Footer from "@/components/footer.vue"
-export default{
-  components:{
-    Nav,
-    Footer
-  }
-}
-</script>
-<style>
+<style scoped>
 :root {
-    --color-primary: #50a117;
-    --color-secondary: black;
+    --color-primary: #6ad11c;
+    --color-secondary: rgba(0, 0, 0, 0.66);
     --color-white: #e3e8e3;
     --color-black: #030910;
     --color-dark: #1b5512;
@@ -40,7 +36,22 @@ export default{
     --size-xs: 500px;
 	--size-ms: 200px;
 }
-body{
-  background-color:var(--color-secondary)
+*{
+    padding:0;
+    margin:0;
+}
+.container{
+    background-color:var(--color-white);
+    height:50%;
+    width:100%;
+
+}
+p{
+    color:rgb(255, 0, 0);
+}
+
+.col-6{
+
+    background-color: azure;
 }
 </style>
