@@ -73,7 +73,7 @@ let {email} = req.body
   res.redirect('/login')
 })
 
-app.post('/login', bodyParser.json(), (req, res) => {
+app.patch('/login', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM users WHERE email = ?`
   let email = {
     email: req.body.email
