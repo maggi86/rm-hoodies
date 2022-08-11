@@ -5,18 +5,28 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const path = require("path");
+const cors = require('cors')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT || 3002;
 
+app.use((req, res, next)=> {
+  res.setHeader("Allow-Control-Allow-Origin", "*");
+  next();
+})
 app.use(
-
+  cors(),
   router,
   express.json(),
   express.urlencoded({
     extended: true,
   })
 );
+
+app.listen(PORT, (err) => {
+  if (err) throw err;
+  console.log(`Sever http://localhost:${PORT} is running`);
+});
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
@@ -33,11 +43,6 @@ router.get("/login", (req, res) => {
 // router.get("/login", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./views/login.html"));
 // });
-
-app.listen(PORT, (err) => {
-  if (err) throw err;
-  console.log(`Sever http://localhost:${PORT} is running`);
-});
 
 app.post('/users', bodyParser.json(), async (req, res) => {
   let bd = req.body;
@@ -115,7 +120,7 @@ app.get('/prod', bodyParser.json(), (req, res) => {
   })
 })
 
-app.post('/prods',bodyParser.json(),(req,res) => {
+router.post('/prods',bodyParser.json(),(req,res) => {
   const {title, category, description, img, price, create_by} =  req.body
   let sql = `Insert into products (title,category,description,img,price,create_by)
   VALUES
@@ -124,6 +129,12 @@ app.post('/prods',bodyParser.json(),(req,res) => {
 
   db.query(sql, [title,category, description, img, price, create_by], (err,results) => {
     if(err) throw err
-    console.log(results)
+    console.log(results);
   })
 })
+
+module.exports = {
+  devServer:{
+    Proxy: "*"
+  }
+}
