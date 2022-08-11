@@ -1,5 +1,26 @@
 <template>
+<div>
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid"> 
+        <img src="https://i.postimg.cc/8zJVmgyS/rm-Hoodies.png" class="navLogo" >
+    </div>
+    <div class="navIn">
+        <ul>
+            <a href="/all">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a> 
+        </ul>
+        <ul>
+          <a href="/login">𝐋𝐨𝐠𝐢𝐧</a>
+        </ul>
+        <ul>
+          <a href="/register">𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫</a>
+        </ul>
+        <ul>
+            <a href="/contact">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a> 
+        </ul>
+    </div>
+</nav>
 <Home/>
+</div>
 </template>
 
 <script>
@@ -13,6 +34,51 @@ export default {
   }
 }
 </script>
+<style scoped>
+.navbar{
+    background-color: var(--color-secondary);
+    height:60px;
+}
+.navLogo{
+    height:60px;
+    width:65px;
+}
+.navIn{
+    font-weight:bold;
+    display:flex;
+    justify-content:flex-end;
+    padding-right:20px;
+}
+a:hover{
+    color:var(--color-dark);
+    text-decoration:none;
+}
+a{
+    text-decoration:none;
+    color:var(--color-primary);
+}
+@media screen and (max-width:576px) {
+    .navbar{
+        align-self:auto center;
+        height:100px;
+        justify-content:center;
+    }
+    ul{
+        margin:0;
+        padding:5px; 
+    }
+    a{
+        font-size:12px;
+        
+
+    }
+    .navLogo{
+        margin:auto;
+        height:60px;
+        width:65px;
+    }
+}
+</style>
 
 
 <!-- https://i.postimg.cc/3NBXd6M4/157406159928106a64b0ed0fd9d15eed92351f70e7-thumbnail-900x.webp

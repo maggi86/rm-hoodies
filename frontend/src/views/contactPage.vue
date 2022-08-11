@@ -1,11 +1,16 @@
 <template>
+<div>
+	<Nav/>
 <Contact/>
+</div>
 </template>
 <script>
 import Contact from "@/components/contact.vue"
+import Nav from "@/components/navbar.vue"
 export default{
     components:{
-        Contact
+        Contact,
+		Nav
     }
 }
 </script>
