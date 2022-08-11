@@ -1,6 +1,6 @@
 <template>
 <div>
-    <Nav/>
+    
 <a href="https://www.youtube.com/watch?v=QMW4AqbuSGg">YOUTUBE IT</a>
 </div>
 </template>

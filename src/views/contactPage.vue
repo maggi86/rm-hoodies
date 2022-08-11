@@ -1,24 +1,44 @@
 <template>
-<div>
-	<Nav/>
+
 <Contact/>
-</div>
+
 </template>
 <script>
 import Contact from "@/components/contact.vue"
-import Nav from "@/components/navbar.vue"
+
 export default{
     components:{
-        Contact,
-		Nav
+        Contact
     }
 }
 </script>
-<!-- <div>
-    <a href="/help"><img src="https://i.postimg.cc/pXtHGXqx/104478-blogger-google-blog-icon.png"></a><br>
-	<a href="/help"><img src="https://i.postimg.cc/vHLdpFNn/104498-facebook-icon.png"></a><br>
-	<a href="/help"><img src="https://i.postimg.cc/GmXnmPrh/104501-twitter-bird-icon.png"></a><br>
-	<a href="/help"><img src="https://i.postimg.cc/VkfcwGxV/211929-social-youtube-icon.png"></a><br>
-	<a href="/help"><img src="https://i.postimg.cc/1zTxp9fk/5279116-pin-pinterest-inspiration-pinterest-logo-icon.png"></a><br>
-	<a href="/help"><img src="https://i.postimg.cc/LshKYq6k/9023675-instagram-logo-fill-icon.png"></a> 
-</div> -->
+<style scoped>
+:root {
+    --color-primary: #6ad11c;
+    --color-secondary: rgba(0, 0, 0, 0.66);
+    --color-white: #e3e8e3;
+    --color-black: #030910;
+    --color-dark: #1b5512;
+    --color-gray: #7f9679;
+
+
+    --font-Poppins: 'Poppins', sans-serif;
+    --font-Raleway: 'Raleway', sans-serif;
+    --font-OpenSans: 'Open Sans', sans-serif;
+
+	--font-xlg: 90px;
+    --font-lg: 64px;
+    --font-md: 24px;
+    --font-sm: 15px;
+    --font-xs: 9px;
+
+    --size-lg: 1280px;
+    --size-md: 976px;
+    --size-sm: 768px;
+    --size-xs: 500px;
+	--size-ms: 200px;
+}
+*{
+	background-color: var(--color-white) ;
+}
+</style>

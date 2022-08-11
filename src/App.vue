@@ -1,16 +1,18 @@
 <template>
 <div>
+  <Nav/>
 <router-view/>
 <Footer/></div>
 </template>
 
 <script>
 import Footer from "@/components/footer.vue"
+import Nav from "./components/navbar.vue";
 export default{
   components:{
     Nav,
     Footer
-  }
+}
 }
 </script>
 <style>
@@ -40,6 +42,12 @@ export default{
 	--size-ms: 200px;
 }
 body{
-  background-color:var(--color-secondary)
+  background-color:var(--color-secondary);
+  overflow-x: hidden;
+
+}
+*{
+  margin: 0;
+  padding: 0;
 }
 </style>
