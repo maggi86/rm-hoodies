@@ -7,7 +7,7 @@ const router = express.Router();
 const path = require("path");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.use(
 
