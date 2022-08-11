@@ -117,7 +117,6 @@ app.patch('/login', bodyParser.json(), (req, res) => {
 })
 
 app.get('/prod', bodyParser.json(), (req, res) => {
-  let bd = req.body
   let sql = `SELECT * FROM products;`
   db.query(sql, (err, results) => {
     if (err) {
