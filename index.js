@@ -19,7 +19,7 @@ app.use(
 );
 
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/index.html"));
+  res.sendFile(path.join(__dirname, "./views/index.html"));
   //   res.sendFile("./views/index.html", {root : __dirname});
 });
 
