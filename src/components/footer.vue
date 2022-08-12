@@ -10,7 +10,6 @@
         </div>
         <div class="col-md-3">
             <h6>𝐇𝐞𝐥𝐩 & 𝐒𝐮𝐩𝐩𝐨𝐫𝐭</h6>
-                <a href="/help">Shipping info</a><br>
 			    <a href="/help">Returns</a><br>
 			    <a href="/help">How to Order</a><br>
 			    <a href="/help">How to Track</a><br>
@@ -20,7 +19,7 @@
         <div class="col-md-3">
            <h6>𝐂𝐮𝐬𝐭𝐨𝐦𝐞𝐫 𝐂𝐚𝐫𝐞</h6>
                 <a href="/contact">Contact Us</a><br>
-			    <a href="#payment">Payment Method</a><br>
+			    <a href="/help">Shipping info</a><br>
 			    <a href="/help">Bonus Points</a>
         </div>
         <div class="col-lg-3">

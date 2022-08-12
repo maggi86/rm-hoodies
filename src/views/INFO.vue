@@ -1,7 +1,7 @@
 <template>
 <div>
     
-<a href="https://www.youtube.com/watch?v=QMW4AqbuSGg">YOUTUBE IT</a>
+<a href="https://i.postimg.cc/Ls1jXQQK/rick-astley-never-gonna-give-you-up.gif">YOUTUBE IT</a>
 </div>
 </template>
 <style scoped>
@@ -11,5 +11,6 @@ color:var(--color-dark);
 }
 a{
     font-size:280px;
+    text-decoration: none;
 }
 </style>
