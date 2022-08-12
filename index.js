@@ -156,7 +156,16 @@ router.post('/prods', bodyParser.json(), (req, res) => {
   })
 })
 
-app.get('products/:id')
+app.get('products/:id',(req,res) => {
+  let sql = `SELECT FROM products WHERE product_id = ${req.params.id}`
+  db.query(sql,(err,results) => {
+    if(err) throw err
+    res.json({
+      status: 200,
+      results : results[0]
+    })
+  })
+})
 
 app.get('/users/:id/cart', (req, res) => {
   let sql = `SELECT cart FROM users WHERE user_id = ${req.params.id}`
@@ -202,7 +211,12 @@ app.post('/users/:id/cart', bodyParser.json(), (req, res) => {
 
 app.delete('/users/:id/cart',bodyParser.json(),(req,res) => {
   let bd = req.body
-  let sql = 'DELETE FROM users WHERE cart'
+  let sql = `UPDATE users SET cart = null WHERE user_id = ${req.params.id}`
+
+  db.query(sql,(err,results) => {
+    if(err) throw err
+    res.send('Cart is empty')
+  })
 })
 
 module.exports = {
