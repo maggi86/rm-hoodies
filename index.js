@@ -122,7 +122,7 @@ app.patch('/login', bodyParser.json(), (req, res) => {
   })
 })
 
-app.get('/prod', bodyParser.json(), (req, res) => {
+app.get('/products', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM products;`
   db.query(sql, (err, results) => {
     if (err) {
@@ -136,7 +136,7 @@ app.get('/prod', bodyParser.json(), (req, res) => {
   })
 })
 
-router.post('/prods', bodyParser.json(), (req, res) => {
+router.post('/products', bodyParser.json(), (req, res) => {
   const {
     title,
     category,
@@ -156,7 +156,7 @@ router.post('/prods', bodyParser.json(), (req, res) => {
   })
 })
 
-app.get('/prod/:id', (req, res) => {
+app.get('/products/:id', (req, res) => {
   let sql = `SELECT * FROM products WHERE product_id = ${req.params.id}`
   db.query(sql, (err, results) => {
     if (err) throw err
