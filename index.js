@@ -122,6 +122,11 @@ app.patch('/login', bodyParser.json(), (req, res) => {
   })
 })
 
+app.put('/user/:id',bodyParser.json(),(req,res) => {
+  let bd = req.body
+  let sql = 'UPDATE userFname,userLname,email'
+})
+
 app.get('/products', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM products;`
   db.query(sql, (err, results) => {
