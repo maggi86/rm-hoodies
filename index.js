@@ -7,8 +7,11 @@ const router = express.Router();
 const path = require("path");
 const cors = require('cors')
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
-const PORT = process.env.PORT || 3002;
+const jwt = require('jsonwebtoken');
+const {
+  json
+} = require("body-parser");
+const PORT = process.env.PORT || 3003;
 
 app.use((req, res, next) => {
   res.setHeader("Allow-Control-Allow-Origin", "*");
@@ -49,12 +52,14 @@ app.post('/users', bodyParser.json(), async (req, res) => {
   // console.log(bd);
   bd.password = await bcrypt.hash(bd.password, 10)
   bd.joinDate = `${new Date().toISOString().slice(0, 10)}`;
-let {email} = req.body
+  let {
+    email
+  } = req.body
   let sql1 = `SELECT email FROM users WHERE email = '${email}';`;
   db.query(sql1, (err, results) => {
     if (err) throw err
     if (results.length > 0) {
-       res.send('Email in use already')
+      res.send('Email in use already')
     } else {
       if (bd.userType === null || bd.userType === undefined) {
         bd.userType = 'user'
@@ -105,6 +110,7 @@ app.patch('/login', bodyParser.json(), (req, res) => {
           if (err) throw err;
           // res.send(token)
           res.json({
+            status: 200,
             msg: results,
             token
           })
@@ -123,6 +129,7 @@ app.get('/prod', bodyParser.json(), (req, res) => {
       console.log(err)
     } else {
       res.json({
+        status: 200,
         results: results
       })
     }
@@ -147,6 +154,55 @@ router.post('/prods', bodyParser.json(), (req, res) => {
     if (err) throw err
     console.log(results);
   })
+})
+
+app.get('products/:id')
+
+app.get('/users/:id/cart', (req, res) => {
+  let sql = `SELECT cart FROM users WHERE user_id = ${req.params.id}`
+  db.query(sql, (err, results) => {
+    if (err) throw err
+    res.json({
+      status: 200,
+      results: JSON.parse(results[0].cart)
+    })
+  })
+})
+
+app.post('/users/:id/cart', bodyParser.json(), (req, res) => {
+  let bd = req.body
+  let sql = `SELECT cart FROM users WHERE user_id = ${req.params.id}`
+  db.query(sql, (err, results) => {
+    if (err) throw err
+    if (results.length > 0) {
+      let cart;
+      if (results[0].length == null) {
+        cart = []
+      } else {
+        cart = JSON.parse(results[0].cart)
+      }
+      let product = {
+        "p_id": cart.length + 1,
+        "title": bd.title,
+        "category": bd.category,
+        "description": bd.description,
+        "img": bd.img,
+        "price": bd.price,
+        "create_by": bd.create_by
+      }
+      cart.push(product)
+      let sql1 = `UPDATE users SET cart = ? WHERE user_id = ${req.params.id}`
+      db.query(sql1, JSON.stringify(cart), (err, results) => {
+        if (err) throw results
+        res.send(`Product added to your cart`)
+      })
+    }
+  })
+})
+
+app.delete('/users/:id/cart',bodyParser.json(),(req,res) => {
+  let bd = req.body
+  let sql = 'DELETE FROM users WHERE cart'
 })
 
 module.exports = {
