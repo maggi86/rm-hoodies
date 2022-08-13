@@ -47,7 +47,7 @@ router.get("/login", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./views/login.html"));
 // });
 
-app.post('/users', bodyParser.json(), async (req, res) => {
+app.post('/register', bodyParser.json(), async (req, res) => {
   let bd = req.body;
   // console.log(bd);
   bd.password = await bcrypt.hash(bd.password, 10)
