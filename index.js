@@ -78,7 +78,7 @@ app.post('/register', bodyParser.json(), async (req, res) => {
   res.redirect('/login')
 })
 
-app.patch('/login', bodyParser.json(), (req, res) => {
+app.post('/login', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM users WHERE email = ?`
   let email = {
     email: req.body.email
@@ -108,15 +108,15 @@ app.patch('/login', bodyParser.json(), (req, res) => {
           expiresIn: "365d"
         }, (err, token) => {
           if (err) throw err;
-          // res.send(token)
+          res.send(token)
           res.json({
             status: 200,
             msg: results,
             token
           })
         });
-        console.log(payload);
-        res.send(`Loged in as ${payload.user.userFname}`)
+        // console.log(payload);
+        // res.send(`Loged in as ${payload.user.userFname}`)
       }
     }
   })
@@ -125,6 +125,33 @@ app.patch('/login', bodyParser.json(), (req, res) => {
 app.put('/user/:id',bodyParser.json(),(req,res) => {
   let bd = req.body
   let sql = 'UPDATE userFname,userLname,email'
+  db.query(sql,)
+})
+
+app.get('/user/:id',bodyParser.json(),(req,res) => {
+  let bd = req.body
+  let sql = `SELECT * FROM users WHERE user_id = ${req.params.id}`
+  db.query(sql,(err,results) => {
+    if(err) throw err
+    res.json({
+      status: 200,
+      results : results
+    })
+  })
+})
+
+app.get('/users', bodyParser.json(), (req, res) => {
+  let sql = `SELECT * FROM users;`
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.json({
+        status: 200,
+        results: results
+      })
+    }
+  })
 })
 
 app.get('/products', bodyParser.json(), (req, res) => {
