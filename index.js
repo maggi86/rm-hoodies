@@ -29,7 +29,9 @@ app.use((req, res, next) => {
 });
 
 app.use(
-  cors(),
+  cors({
+    origin: '*'
+  }),
   router,
   express.json(),
   express.urlencoded({
