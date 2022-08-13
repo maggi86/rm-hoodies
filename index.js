@@ -103,8 +103,8 @@ app.post('/login', bodyParser.json(), (req, res) => {
   // }
   db.query(sql, async (err, results) => {
     if (err) throw err
-    if (results.length === 0) {
-      res.send(`No email found`)
+    if (!results.length) {
+      res.status(401).send(`No email found`)
     } else {
       const isMatch = await bcrypt.compare(req.body.password, results[0].password);
       if (!isMatch) {
