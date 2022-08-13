@@ -82,7 +82,7 @@ app.post('/register', bodyParser.json(), async (req, res) => {
   res.redirect('/login')
 })
 
-router.post('/login', bodyParser.json(), (req, res) => {
+app.post('/login', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM users WHERE email = ?`
   let email = {
     email: req.body.email
