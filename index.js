@@ -50,12 +50,12 @@ app.use(express.static(staticPath));
 //   //   res.sendFile("./views/index.html", {root : __dirname});
 // });
 
-router.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/register.html"));
-});
-router.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/login.html"));
-});
+// router.get("/register", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./views/register.html"));
+// });
+// router.get("/login", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./views/login.html"));
+// });
 
 // router.get("/login", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./views/login.html"));
