@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const {
   json
 } = require("body-parser");
+const { Router } = require("express");
 const PORT = process.env.PORT || 3003;
 
 app.use((req, res, next) => {
@@ -30,6 +31,9 @@ app.listen(PORT, (err) => {
   if (err) throw err;
   console.log(`Sever http://localhost:${PORT} is running`);
 });
+
+let staticPath = path.join(__dirname + "/public")
+app.use(express.static(staticPath));
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
@@ -78,7 +82,7 @@ app.post('/register', bodyParser.json(), async (req, res) => {
   res.redirect('/login')
 })
 
-app.post('/login', bodyParser.json(), (req, res) => {
+router.post('/login', bodyParser.json(), (req, res) => {
   let sql = `SELECT * FROM users WHERE email = ?`
   let email = {
     email: req.body.email
