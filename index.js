@@ -14,10 +14,20 @@ const {
 const { Router } = require("express");
 const PORT = process.env.PORT || 3003;
 
+// app.use((req, res, next) => {
+//   res.setHeader("Allow-Control-Allow-Origin", "*");
+//   next();
+// })
 app.use((req, res, next) => {
-  res.setHeader("Allow-Control-Allow-Origin", "*");
+  // res.setHeader("Access-Control-Allow-Origin", "*");
+  res.set({
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*",
+    "Access-Control-Allow-Methods": "*",
+  });
   next();
-})
+});
+
 app.use(
   cors(),
   router,
