@@ -1,0 +1,7 @@
+POST https://rm-hoodiess.herokuapp.com/login
+Content-Type: application/json 
+
+{
+    "email": "m@gmail.com",
+    "password": "meagan"
+}

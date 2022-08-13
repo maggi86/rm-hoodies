@@ -70,7 +70,7 @@ a{
     text-decoration:none;
     color:var(--color-primary);
 }
-@media screen and (max-width:576px) {
+@media screen and (max-width:576px),(min-width: 300px) {
     .navbar{
         align-self:auto center;
         height:100px;
