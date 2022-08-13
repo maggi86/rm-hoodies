@@ -93,12 +93,13 @@ app.post('/register', bodyParser.json(), async (req, res) => {
 })
 
 app.post('/login', bodyParser.json(), (req, res) => {
-  let sql = `SELECT * FROM users WHERE email = ?`
-  let email = {
-    email: req.body.email
-  }
-
-  db.query(sql, email.email, async (err, results) => {
+  let {email} = req.body
+  // let sql = `SELECT * FROM users WHERE email = ?`
+  let sql = `SELECT * FROM users WHERE email = ${email}`
+  // let email = {
+  //   email: req.body.email
+  // }
+  db.query(sql, async (err, results) => {
     if (err) throw err
     if (results.length === 0) {
       res.send(`No email found`)
