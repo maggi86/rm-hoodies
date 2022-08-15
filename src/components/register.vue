@@ -2,21 +2,21 @@
     <form @submit.prevent="register">
       <input
         type="text"
-        placeholder="Please enter Name "
-        name="email"
-        id="email"
+        placeholder="Please enter Name"
+        name="name"
+        id="userFname"
         v-model="userFname"
       />
       <input
         type="text"
-        placeholder="Please enter Surname "
-        name="email"
-        id="email"
-        v-model="userSname"
+        placeholder="Please enter Surname"
+        name="surname"
+        id="userLname"
+        v-model="userLname"
       />
       <input
         type="text"
-        placeholder="Please enter email "
+        placeholder="Please enter email"
         name="email"
         id="email"
         v-model="email"
@@ -31,9 +31,9 @@
       />
       <input
         type="text"
-        placeholder="Please enter email "
-        name="email"
-        id="email"
+        placeholder="Please enter phoneNumber "
+        name="phone"
+        id="phoneNumber"
         v-model="phoneNumber"
       />
       <br />
@@ -47,12 +47,23 @@ export default {
     data(){
         return {
             userFname: '',
-            userSname:'',
+            userLname:'',
             email : '',
             password: '',
             phoneNumber: '',
         }
     },
-    
+    methods:{
+      register(){
+        let user = {
+          userFname: this.userFname,
+            userLname:this.userLname,
+            email : this.email,
+            password: this.password,
+            phoneNumber: this.phoneNumber,
+        }
+        this.$store.dispatch('register',user)
+      }
+    }
 }
 </script>

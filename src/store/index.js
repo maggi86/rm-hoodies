@@ -17,25 +17,33 @@ export default createStore({
   actions: {
     register: async (context, payload) => {
       const {
-        username,
+        userFname,
+        userSname,
         email,
-        password
+        password,
+        phoneNumber
       } = payload;
-      let response = await fetch("https://rm-hoodiess.herokuapp.com/register", {
+      await fetch("https://rm-hoodiess.herokuapp.com/register", {
         method: "POST",
         body: JSON.stringify({
-          username: username,
+          userFname: userFname,
+          userSname: userSname,
           email: email,
           password: password,
+          phoneNumber: phoneNumber
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
         },
-      });
-      const userData = await response.json();
-      context.commit("setUser", userData);
-      console.log(userData);
-      router.push("/login");
+      })
+      .then((res)=> res.json())
+      .then((data)=>{
+        context.commit("setUser", data.user);
+        alert(`U registed`)
+        // setTimeout(() => {
+        //   router.push("/login");
+        // }, 2000);  
+      })
     },
     // login: async (context, data) => {
     //   const { email, password } = data;
@@ -62,8 +70,11 @@ export default createStore({
           console.log(data.msg)
           let user = data.msg
           context.commit("setUser", user)
+          alert('Login in success')
         })
-        setTimeout(() => {router.push("/all")},3000)
+      setTimeout(() => {
+        router.push("/all")
+      }, 3000)
     },
     logout: async (context) => {
       context.commit("setUser", null);
@@ -75,7 +86,7 @@ export default createStore({
         .then((data) => (context.state.prods = data.results));
     },
     getProduct: async (context, id) => {
-      fetch("https://rm-hoodiess.herokuapp.com/products/:id")
+      fetch(`https://rm-hoodiess.herokuapp.com/products/` + id)
         .then((res) => res.json())
         .then((data) => (context.state.prod = data.results));
     },
