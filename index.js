@@ -122,7 +122,7 @@ app.post('/login', bodyParser.json(), (req, res) => {
           expiresIn: "365d"
         }, (err, token) => {
           if (err) throw err;
-          res.send(token)
+          // res.send(token)
           res.json({
             status: 200,
             msg: results,
