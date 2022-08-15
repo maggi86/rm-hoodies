@@ -20,10 +20,11 @@ const PORT = process.env.PORT || 3003;
 // })
 app.use((req, res, next) => {
   // res.setHeader("Access-Control-Allow-Origin", "*");
-  res.set({
+  res.setHeader({
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "*",
     "Access-Control-Allow-Methods": "*",
+    'Access-Control-Allow-Credentials':'true'
   });
   next();
 });
