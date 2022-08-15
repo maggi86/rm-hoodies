@@ -4,7 +4,7 @@ export default createStore({
   state: {
     user: null,
     prods: null,
-    prod: null
+    prod: null,
   },
   getters: {},
   mutations: {
@@ -41,23 +41,23 @@ export default createStore({
 
     login: async (context, data) => {
       // const { email, password } = data;
-      console.log("Hi")
+      console.log("Hi");
 
       fetch(`https://rm-hoodiess.herokuapp.com/login`, {
-          method : "POST",
-          body: JSON.stringify(data),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-          }}
-          )
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
-        })
+          console.log(data);
+        });
     },
-      // const userData = await response.json();
-      // context.commit("setUser", userData[0]);
-      // router.push("/products");
+    // const userData = await response.json();
+    // context.commit("setUser", userData[0]);
+    // router.push("/products");
     logout: async (context) => {
       context.commit("setUser", null);
       router.push("/");
@@ -68,12 +68,12 @@ export default createStore({
         .then((data) => (context.state.prods = data.results));
     },
     getProduct: async (context, id) => {
-      fetch("https://rm-hoodiess.herokuapp.com/products/:id")
+      fetch("https://rm-hoodiess.herokuapp.com/products/" + id)
         .then((res) => res.json())
         .then((data) => (context.state.prod = data.results));
     },
     getCart: async (context, id) => {
-      fetch("https://rm-hoodiess.herokuapp.com/users/:id/cart")
+      fetch("https://rm-hoodiess.herokuapp.com/users/" + id + "/cart")
         .then((res) => res.json())
         .then((data) => (context.state.prod = data.results));
     },

@@ -101,7 +101,7 @@ a:hover{
 a{
     text-decoration:none !important;
     color:var(--color-primary) !important;
-    font-size:15px !important;
+    font-size:18px !important;
 }
 
 /* @media screen and (max-width:576px),(min-width: 300px) {

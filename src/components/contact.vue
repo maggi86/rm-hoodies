@@ -134,7 +134,7 @@ p {
 .message {
   height: 170px;
   /* width: 550px; */
-  width: 100%;
+  width: 98%;
 }
 .h6 {
   margin-top: 30px;
@@ -145,7 +145,7 @@ span {
   color: var(--color-gray);
 }
 .vr {
-  color: var(--color-gray);
+  color: var(--color-secondary);
   height: 450px;
   width: 2px;
 }
