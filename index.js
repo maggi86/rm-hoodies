@@ -73,7 +73,7 @@ app.post('/register', bodyParser.json(), async (req, res) => {
   db.query(sql1, (err, results) => {
     if (err) throw err
     if (results.length > 0) {
-      res.send('Email in use already')
+      console.log('Email in use already')
     } else {
       if (bd.userType === null || bd.userType === undefined) {
         bd.userType = 'user'
@@ -122,7 +122,6 @@ app.post('/login', bodyParser.json(), (req, res) => {
           expiresIn: "365d"
         }, (err, token) => {
           if (err) throw err;
-          res.send(token)
           res.json({
             status: 200,
             msg: results,
