@@ -1,8 +1,39 @@
 <template>
-<nav class="navbar navbar-expand-sm">
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="https://i.postimg.cc/8zJVmgyS/rm-Hoodies.png" class="navLogo" >
+    </a>
+    <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav navIn">
+        <ul>
+            <a href="/">𝐇𝐨𝐦𝐞</a> 
+        </ul>
+        <ul>
+            <a href="/all">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a> 
+        </ul>
+        <ul>
+          <a href="/login">𝐋𝐨𝐠𝐢𝐧</a>
+        </ul>
+        <ul>
+          <a href="/register">𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫</a>
+        </ul>
+        <ul>
+            <a href="/contact">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a> 
+        </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-sm sticky-top">
     <div class="container-fluid"> 
         <img src="https://i.postimg.cc/8zJVmgyS/rm-Hoodies.png" class="navLogo" >
     </div>
+    
     <div class="navIn">
         <ul>
             <a href="/">𝐇𝐨𝐦𝐞</a> 
@@ -20,7 +51,7 @@
             <a href="/contact">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a> 
         </ul>
     </div>
-</nav>
+</nav> -->
 </template>
 <style scoped>
 :root {
@@ -50,9 +81,10 @@
 }
 .navbar{
     background-color: var(--color-secondary);
-    height:60px;
+    min-height:10vh;
 }
 .navLogo{
+    margin-left: 20px;
     height:60px;
     width:65px;
 }
@@ -63,14 +95,16 @@
     padding-right:20px;
 }
 a:hover{
-    color:var(--color-dark);
-    text-decoration:none;
+    color:var(--color-dark) !important;
+    text-decoration:none !important;
 }
 a{
-    text-decoration:none;
-    color:var(--color-primary);
+    text-decoration:none !important;
+    color:var(--color-primary) !important;
+    font-size:15px !important;
 }
-@media screen and (max-width:576px),(min-width: 300px) {
+
+/* @media screen and (max-width:576px),(min-width: 300px) {
     .navbar{
         align-self:auto center;
         height:100px;
@@ -81,7 +115,7 @@ a{
         padding:5px; 
     }
     a{
-        font-size:12px;
+        /* font-size:12px; 
         
 
     }
@@ -90,5 +124,5 @@ a{
         height:60px;
         width:65px;
     }
-}
+} */
 </style>
