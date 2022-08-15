@@ -18,14 +18,11 @@ const PORT = process.env.PORT || 3003;
 //   res.setHeader("Allow-Control-Allow-Origin", "*");
 //   next();
 // })
-app.use((req, res, next) => {
-  // res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "*",
-    "Access-Control-Allow-Methods": "*",
-    'Access-Control-Allow-Credentials':'true'
-  });
+app.use((req, res, next)=>{
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   next();
 });
 
