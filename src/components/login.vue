@@ -1,6 +1,5 @@
 <template>
   <div class="card">
-    <p>lorem</p>
     <form @submit.prevent="login">
       <input
         type="text"
@@ -22,7 +21,9 @@
         <button class="btn form-control" type="submit">Login</button>
       </div>
     </form>
-    <div v-if="user">Welcome {{ user.userFname }}</div>
+    <div v-if="user">
+      <h2>Welcome {{ user[0].userFname }}</h2>
+    </div>
   </div>
 </template>
 <script>
@@ -44,7 +45,7 @@ export default {
         email: this.email,
         password: this.password,
       };
-     return this.$store.dispatch("login", user);
+      return this.$store.dispatch("login", user);
     },
   },
 };

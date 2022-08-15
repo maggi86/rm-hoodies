@@ -1,4 +1,6 @@
-import { createStore } from "vuex";
+import {
+  createStore
+} from "vuex";
 import router from "@/router";
 export default createStore({
   state: {
@@ -14,7 +16,11 @@ export default createStore({
   },
   actions: {
     register: async (context, payload) => {
-      const { username, email, password } = payload;
+      const {
+        username,
+        email,
+        password
+      } = payload;
       let response = await fetch("https://rm-hoodiess.herokuapp.com/register", {
         method: "POST",
         body: JSON.stringify({
@@ -22,7 +28,9 @@ export default createStore({
           email: email,
           password: password,
         }),
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
       });
       const userData = await response.json();
       context.commit("setUser", userData);
@@ -42,22 +50,21 @@ export default createStore({
     login: async (context, data) => {
       // const { email, password } = data;
       console.log("Hi")
-
       fetch(`https://rm-hoodiess.herokuapp.com/login`, {
-          method : "POST",
+          method: "POST",
           body: JSON.stringify(data),
           headers: {
             'Content-type': 'application/json; charset=UTF-8'
-          }}
-          )
+          }
+        })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          console.log(data.msg)
+          let user = data.msg
+          context.commit("setUser", user)
         })
+        setTimeout(() => {router.push("/all")},3000)
     },
-      // const userData = await response.json();
-      // context.commit("setUser", userData[0]);
-      // router.push("/products");
     logout: async (context) => {
       context.commit("setUser", null);
       router.push("/");
