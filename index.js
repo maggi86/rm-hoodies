@@ -90,7 +90,7 @@ app.post('/register', bodyParser.json(), async (req, res) => {
       })
     }
   })
-  res.redirect('/login')
+  // res.redirect('/login')
 })
 
 app.post('/login', bodyParser.json(), (req, res) => {
