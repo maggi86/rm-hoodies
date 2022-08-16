@@ -43,22 +43,6 @@ app.listen(PORT, (err) => {
 let staticPath = path.join(__dirname + "/public")
 app.use(express.static(staticPath));
 
-// router.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./views/index.html"));
-//   //   res.sendFile("./views/index.html", {root : __dirname});
-// });
-
-// router.get("/register", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./views/register.html"));
-// });
-// router.get("/login", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./views/login.html"));
-// });
-
-// router.get("/login", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./views/login.html"));
-// });
-
 app.post('/register', bodyParser.json(), async (req, res) => {
   let bd = req.body;
   // console.log(bd);
