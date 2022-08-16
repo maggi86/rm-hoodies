@@ -1,15 +1,20 @@
 <template>
+
 <div class="img-fluid container-fluid">
-    <div class="row mx-5">
-        <div class="col-md-6">
+  <div class="card">
+    <div class="column mx-5">
+        <div class="row-md-6 mx-5 pt-4">
+          <div id="img">
             <!-- <img src="https://i.postimg.cc/8zJVmgyS/rm-Hoodies.png"> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odio, voluptas porro accusamus rerum aliquam quia excepturi dicta sequi saepe distinctio ducimus quo explicabo tempora. Neque laboriosam hic voluptates quas.</p>
+            <img src="https://i.postimg.cc/65WLrhd8/Raees-2.jpg" height="200px" width="170px">
+            <img src="https://i.postimg.cc/sDjnJCtj/Meagan-2.jpg" height="200px" width="250px" class="ps-5">
+          </div>
         </div>
-        <div class="col-md-6"><div class="card">
-            <img src="https://i.postimg.cc/X7CN9dvM/rm-Hoodies-4.png" height="400px" width="550px">
+        <div class="row-md-6 pt-5">
+            <!-- <img src="https://i.postimg.cc/X7CN9dvM/rm-Hoodies-4.png" height="400px" width="550px"> -->
 
             
-            <p>𝐑𝐌~𝐇𝐎𝐎𝐃𝐈𝐄𝐒 is an inter-national website that sells hoodies that were made by new upcoming businesses.The point of 𝐑𝐌~𝐇𝐎𝐎𝐃𝐈𝐄𝐒 is to let small hoodie businesses </p>
+            <p>𝐑𝐌~𝐇𝐎𝐎𝐃𝐈𝐄𝐒 is an inter-national website that sells hoodies that were made by new upcoming businesses.The point of 𝐑𝐌~𝐇𝐎𝐎𝐃𝐈𝐄𝐒 is to let small hoodie businesses be able to promote their merchandise on a wide-scale platform. Ra'ees Benny and Meagan Williams is the co-founders of this site.</p>
             </div>
         </div>
     </div>
@@ -18,19 +23,37 @@
 
 
 <style scoped>
+.card{
+height: auto;
+width:100%;
+/* margin-top:-12%; */
+padding-bottom:5%;
+    box-shadow: 0px 5px 25px var(--color-dark);
+ /* margin-top:20%; */
+  /* margin-right: auto; */
+  backdrop-filter: blur(5px);
+  background-color: var(--color-);
+
+}
+#img{
+  margin-left:29%;
+  margin-right:25%;
+
+}
 .img-fluid {
-  width: 90%;
-  height: 70vh;
-  background-image: url("https://i.postimg.cc/X7CN9dvM/rm-Hoodies-4.png");
-  /* padding-bottom:300px; */
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  /* height: 100%; */
+  /* margin-top:10%; */
+  /* padding-top: 10%; */
+  background-image: url("https://i.postimg.cc/Sxw1LNcT/soundcloud-logo-716x1024-3.jpg");
   box-shadow: 0px 5px 25px var(--color-secondary);
+    background-repeat: no-repeat;  
+  background-size:cover ;
   backdrop-filter: blur(5px);
   background-color: var(--color-);
 }
 /* .container-fluid { */
-  /* padding-top:70px; */
+  /* padding-top:10%; */
   /* background-color:var(--color-white); */
   /* height: 60%;
   width: 80%;
@@ -41,13 +64,21 @@
 /* } */
 .card {
   height: 100%;
-  width: 100%;
-  box-shadow: 0px 5px 25px var(--color-secondary);
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* padding-top: 90px; */
-  backdrop-filter: blur(5px);
-  background-color: var(--color-);
+  /* width: 100%; */
 
+}
+p{
+  /* padding-top:10%; */
+  font-size:28px;
+  color:var(--color-dark);
+  margin-left:20%;
+  width:800px
+}
+
+@media screen and (max-width: 1413px){
+  .img-fluid{
+    margin-bottom:5%;
+  }
+  
 }
 </style>

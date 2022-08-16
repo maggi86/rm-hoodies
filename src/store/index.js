@@ -11,6 +11,15 @@ export default createStore({
     setUser(state, User) {
       state.user = User;
     },
+    sortPrice: (state) => {
+      state.prods.sort((a, b) => {
+        return a.price - b.price;
+      });
+      if (!state.asc) {
+        state.prods.reverse();
+      }
+      state.asc = !state.asc;
+    },
   },
   actions: {
     register: async (context, payload) => {

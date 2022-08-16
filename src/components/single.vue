@@ -101,6 +101,7 @@ export default {
   background-image: url("https://i.postimg.cc/c1f81pZT/green-and-black-aesthetic-android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-jwj9n-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0px 15px 25px var(--color-dark);
 }
 .view {
   width:14em;
@@ -109,7 +110,7 @@ export default {
   /* margin-left: 3px; */
   display: flex;
   margin-bottom: 100px;
-  margin-left:33%; 
+  margin-left:18%; 
 }
 
 .square {
@@ -123,7 +124,7 @@ export default {
 }
 #info{
   margin-top: 10px; 
-  margin-left:39%; 
+  margin-left:25%; 
   font-size:23px;
   color:var(--color-primary);
   font-weight:bold;
@@ -131,13 +132,13 @@ export default {
 }
 #display{
     font-size:20px;
-    color:var(--color-dark);
+    color:var(--color-secondary);
     font-weight:bold;
     width:300px;
 }
 .row{
     font-size:larger;
-    color:var(--color-dark);
+    color:var(--color-secondary);
     padding-left:20px
 }
 .face {
