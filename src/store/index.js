@@ -74,7 +74,7 @@ export default createStore({
         })
       setTimeout(() => {
         router.push("/all")
-      }, 3000)
+      }, 4000)
     },
     logout: async (context) => {
       context.commit("setUser", null);
