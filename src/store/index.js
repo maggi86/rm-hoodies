@@ -18,7 +18,7 @@ export default createStore({
     register: async (context, payload) => {
       const {
         userFname,
-        userSname,
+        userLname,
         email,
         password,
         phoneNumber
@@ -27,7 +27,7 @@ export default createStore({
         method: "POST",
         body: JSON.stringify({
           userFname: userFname,
-          userSname: userSname,
+          userLname: userLname,
           email: email,
           password: password,
           phoneNumber: phoneNumber
