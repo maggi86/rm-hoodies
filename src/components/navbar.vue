@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar navbar-expand-md">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/profile">
         <img src="https://i.postimg.cc/8zJVmgyS/rm-Hoodies.png" class="navLogo" >
     </a>
     <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

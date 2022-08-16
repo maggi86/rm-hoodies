@@ -45,7 +45,7 @@ padding-bottom:5%;
   /* height: 100%; */
   /* margin-top:10%; */
   /* padding-top: 10%; */
-  background-image: url("https://i.postimg.cc/Sxw1LNcT/soundcloud-logo-716x1024-3.jpg");
+  background-image: url("https://i.postimg.cc/0QjFmLqk/backgroundgif.gif");
   box-shadow: 0px 5px 25px var(--color-secondary);
     background-repeat: no-repeat;  
   background-size:cover ;

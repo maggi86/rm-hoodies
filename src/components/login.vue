@@ -1,6 +1,8 @@
 <template>
-  <div class="card">
-    <p>lorem</p>
+  <div class="container">
+    <div class="row">
+      <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
+    </div>
     <form @submit.prevent="login">
       <input
         type="text"
@@ -18,11 +20,16 @@
         v-model="password"
       />
       <br />
+      <center>
+      <div style="border: 1px solid black; height: 1px; width: 300px"></div>
+    </center>
       <div>
         <button class="btn form-control" type="submit">Login</button>
       </div>
     </form>
-    <div v-if="user">Welcome {{ user.userFname }}</div>
+    <div v-if="user">
+      <h2>Welcome {{ user[0].userFname }}</h2>
+    </div>
   </div>
 </template>
 <script>
@@ -44,15 +51,15 @@ export default {
         email: this.email,
         password: this.password,
       };
-     return this.$store.dispatch("login", user);
+      return this.$store.dispatch("login", user);
     },
   },
 };
 </script>
 <style scoped>
-.card {
+.container {
   height: 600px;
-  width: 500px;
+  width: 300px;
   background-color: green;
 }
 </style>
